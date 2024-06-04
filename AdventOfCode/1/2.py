@@ -12,23 +12,6 @@ def get_digits(s): # return a string of digits for a given input line
             digit_str += s[pos]
         pos += 1
     return digit_str
-    # for each index in eightwothree
-    for i in range(len(string)):
-        # for each index, start slicing the window +1 until len(string)
-        j = i
-        # slicing window until len(string)
-        while j <= len(string):
-            # if the window matches, replace the window with the number from dict, and
-            # recursivly call on that newly changed string
-            if string[i:j] in digits.keys():
-                string = string.replace(string[i:j-1], str(digits[string[i:j]]))
-                convert_letter_to_num(string)
-            # no match: keep on +1 the window slicing
-            else:
-                j += 1
-        
-    # If no changes are made in this iteration, return the result
-    return string
 
 if __name__ == "__main__":
     # read input
