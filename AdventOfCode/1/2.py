@@ -12,8 +12,6 @@ def get_digits(s): # return a string of digits for a given input line
             digit_str += s[pos]
         pos += 1
     return digit_str
-
-def convert_letter_to_num(string):
     # for each index in eightwothree
     for i in range(len(string)):
         # for each index, start slicing the window +1 until len(string)
