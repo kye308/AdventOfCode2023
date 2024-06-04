@@ -1,17 +1,4 @@
 import os
-import re
-
-def first_digit(s): # returns string
-    for i in range(len(s)):
-        if s[i].isdigit():
-            return s[i]
-    return "" # no digits in string
-
-def last_digit(s): # returns string
-    for i in range(len(s)-1, -1, -1):
-        if s[i].isdigit():
-            return s[i]
-    return "" # no digits in string
 
 def get_digits(s): # return a string of digits for a given input line
     digit_str = ""
@@ -75,16 +62,14 @@ if __name__ == "__main__":
 
     for c in test_cases:
         print(get_digits(c))
-    
-    print("END TEST CASES") # missing test case was repeated digits for a line
+    print("END TEST CASES\n") # missing test case was repeated digits for a line
+
     for line in f.readlines():
         s = get_digits(line)
         
         # update sum with [first digit][second digit]
         # potential validation: check if first_digit and last_digit return nonzero length strings
-        digit_str = get_digits(line)
-        my_ans = int(first_digit(s) + last_digit(s))
-        # my_ans = int(digit_str[0] + digit_str[-1])
-        sum += my_ans
+        val = int(s[0] + s[-1])
+        sum += val
 
     print(sum)
